@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@using CdOrganizer.Models;
+
+<h1>Albums</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No albums have been added yet!</h3>
+} 
+
+@foreach (AlbumList albumList in Model)
+{
+  <h3><a href='/albumlists/@albumList.Id'>@albumList.Name</a></h3>
+}
+
+<p><a href='/'>Back home</a></p>

@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@using CdOrganizer.Models;
+
+<h3>Here are all the songs in this album:</h3>
+
+<ol>
+@foreach (Song song in @Model["songs"])
+{
+  <li><a href='/albumLists/@Model["albumList"].Id/songs/@song.Id'>@song.Description</a></li>
+}
+</ol>
+
+<p><a href='/albumLists/@Model["albumList"].Id/songs/new'>Add a new song</a></p>
+<!-- <p><a href='/albumLists/@Model["albumList"].Id/songs/delete'>Delete all songs</a></p>  //This will be useful later -->
+<p><a href='/albumLists'>Return to albumList list</a></p>
+<p><a href='/'>Return to Main Page</a></p>
